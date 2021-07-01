@@ -53,7 +53,7 @@ public class UsuarioRegistrado {
         if(is_correct){
             System.out.println("-- Contraseña CORRECTA");
             System.out.println("-- Usuario   : " + user_name);
-            System.out.println("-- Contraseña: ********* (" + user_pwd + ")");
+            System.out.println("-- Contraseña: ********* (" + user_pwd + ")\n\n");
         }else{
             System.out.println("-- Contraseña o Usuario Incorrecta");
             System.out.println("INTENTE OTRA VEZ\n\n");
