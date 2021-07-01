@@ -1,0 +1,12 @@
+% Proxy : Se tienen 2 servidores que son parte
+de un cluster donde en cada servidor se tiene
+la misma aplicación web, se tiene configurado
+un proxy que va almacenando a los usuarios
+(ID , Nombre, PWD) que realizan Login
+(Verificar si el pwd es correcto), si el ID
+del usuario que se acaba de loguear es un
+número primo se guarda en el servidor1 si no
+es primo se guarda en el segundo servidor.
+
+(Hacer la prueba con un usuario con id que
+sea primo y con id que no sea primo)
