@@ -1,10 +1,10 @@
 package ParcialFinal.Ejercicio_2_Adapter;
 
-public class CuadratrackGasolina  implements  IMotosEmpresa1 {
+public class CuadratrackDiesel implements  IMotosEmpresa1{
     private int gaslevel;
     private String id;
 
-    public CuadratrackGasolina(int gaslevel, String id) {
+    public CuadratrackDiesel(int gaslevel, String id) {
         this.gaslevel = gaslevel;
         this.id = id;
     }
@@ -28,13 +28,12 @@ public class CuadratrackGasolina  implements  IMotosEmpresa1 {
     @Override
     public void llenarGasolina(int gasolina) {
         setGaslevel(gasolina);
-        System.out.println("Diesel en :" + gasolina + gaslevel);
+        System.out.println("Gasolina en :" +gasolina + gaslevel);
     }
 
     @Override
     public void estadoCombustible() {
-        int t = (int) (Math.random() * 50 - 1);
-        System.out.println("Estado : " + t);
+        int t = (int)(Math.random() * 50-1);
+        System.out.println("Estado : " +t);
     }
 }
-
