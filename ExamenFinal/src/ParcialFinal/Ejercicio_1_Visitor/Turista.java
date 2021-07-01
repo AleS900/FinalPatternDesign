@@ -2,14 +2,15 @@ package ParcialFinal.Ejercicio_1_Visitor;
 
 public class Turista implements IVisitante{
     private String id;
-    private Integer money;
+    private double money;
     private String name;
     private String estacion;
 
-    public Turista(String ID, Integer money, String name) {
-        this.id = ID;
+    public Turista(String id, double money, String name, String estacion) {
+        this.id = id;
         this.money = money;
         this.name = name;
+        this.estacion = estacion;
     }
 
     public String getId() {
@@ -20,11 +21,11 @@ public class Turista implements IVisitante{
         this.id = id;
     }
 
-    public Integer getMoney() {
+    public double getMoney() {
         return money;
     }
 
-    public void setMoney(Integer money) {
+    public void setMoney(double money) {
         this.money = money;
     }
 
@@ -42,21 +43,39 @@ public class Turista implements IVisitante{
             System.out.println("\n-- Turista: " + name);
             System.out.println("-- ID     : " + id);
             System.out.println("-- Monto Original: " + money);
-            int t = (int)Math.random()*10+money-2;
+            double t = money - (Math.random() * 100000);
             System.out.println("-- Monto Actual  : " + t);
             System.out.println("VISITA COMPLETA");
         }else {
-
+            System.out.println("VISITA NO COMPLETADA hace mucho frio.");
         }
     }
 
     @Override
     public void visitar(Cochabamba cochabamba) {
-
+        if(estacion.toLowerCase().equals("otoño") || estacion.toLowerCase().equals("invierno")){
+            System.out.println("\n-- Turista: " + name);
+            System.out.println("-- ID     : " + id);
+            System.out.println("-- Monto Original: " + money);
+            double t = money - (cochabamba.getNumHabitantes()*0.1);
+            System.out.println("-- Monto Actual  : " + t);
+            System.out.println("VISITA COMPLETA");
+        }else {
+            System.out.println("\nVISITA NO COMPLETADA hay mucha gente.\n");
+        }
     }
 
     @Override
     public void visitar(SantaCruz santa_cruz) {
-
+        if(!estacion.toLowerCase().equals("verano")){
+            System.out.println("\n-- Turista: " + name);
+            System.out.println("-- ID     : " + id);
+            System.out.println("-- Monto Original: " + money);
+            double t = money - (santa_cruz.getNumProvincias()*0.5);
+            System.out.println("-- Monto Actual  : " + t);
+            System.out.println("VISITA COMPLETA");
+        }else {
+            System.out.println("\nVISITA NO COMPLETADA hace mucho calor.\n");
+        }
     }
 }
